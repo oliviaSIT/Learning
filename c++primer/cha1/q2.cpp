@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -22,13 +23,13 @@ int main()
         x = x / 10;
     }
     
-    
-    y = v[0];
-    for (int n = 1; n = v.size() - 1; n++)
+    int m = v.size()-1;
+    y = v[0] * pow(10, m);
+    for (int n = 1; n <= m; ++n)
     {
-        y = y + v[n] * 10 * n;
+        y = y + v[n] * pow(10 ,m - n);
     }
-    if (sign = 1)
+    if (sign == 1)
        { y = -1 * y;}
     
     cout << y << endl;
