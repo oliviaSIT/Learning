@@ -1,12 +1,14 @@
-#include <iosream>
+#include <iostream>
 
 using namespace std;
 
 class solution {
 public:
     bool isPalindrome(int x) {
-    if (x < 0) 
-        return false;
+    if (x < 0) {
+        x = -1 * x;
+        }
+    
     int high = 1;
     while (x / high >= 10) {
         high *= 10;
@@ -24,7 +26,11 @@ public:
 
 
 int main() {
-    
-}
-    
-}
+    solution ans;
+    int x;
+    while (cin >> x){
+    cout << ans.isPalindrome(x) << endl;   
+    }
+    return 0;
+}    
+
