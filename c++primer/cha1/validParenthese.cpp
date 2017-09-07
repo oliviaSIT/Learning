@@ -6,14 +6,34 @@ using namespace std;
 class solution {
 public:
    bool validParenthese(string x) {
-      if (x.empty()) return false;
-
-      string x1("()"), x2("[]"), x3("{}"); 
-      if (x == x1 || x == x2 || x == x3) {
-          return true;      
+      if (x.empty() || x.size() % 2 != 0) return false;
+       
+      unsigned i = 0;
+      while (i < x.size() / 2) {
+          switch (x[2 * i]) {
+             case '(':   
+                 if (x[2 * i + 1] != ')') {
+                     return false;
+                 }
+                 else {++i;continue;}
+             case '[':
+                 if (x[2 * i + 1] != ']') {
+                     return false;
+                 }
+                 else {++i;continue;}
+             case '{':         
+                 if (x[2 * i + 1] != '}') {
+                     return false;
+                 }
+                 else {++i;continue;}
+                 
+             default: return false;
+          }
+     
+         ++i;    
       }
-      else {return false;
-      }
+      
+      return true;
    }
 };
 
