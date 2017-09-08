@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<stack>
 
 using namespace std;
 
@@ -8,6 +9,19 @@ public:
    bool validParenthese(string x) {
       if (x.empty() || x.size() % 2 != 0) return false;
        
+      stack<char> s;
+    
+      char current, p;      
+      for (int i = 0; i < x.size(); ++i ) {
+          current = x[i];
+          if ( current == '(' || current == '[' || current == '{') {
+               s.push(current);
+          }
+          
+      }
+
+
+
       unsigned i = 0;
       while (i < x.size() / 2) {
           switch (x[2 * i]) {
