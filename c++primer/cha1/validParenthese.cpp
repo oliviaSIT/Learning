@@ -7,48 +7,40 @@ using namespace std;
 class solution {
 public:
    bool validParenthese(string x) {
-      if (x.empty() || x.size() % 2 != 0) return false;
-       
+      if (x.empty() || x.size() % 2 != 0) {
+         return false;
+      }
+ 
       stack<char> s;
     
       char current, p;      
-      for (int i = 0; i < x.size(); ++i ) {
+      for (unsigned i = 0; i < x.size(); ++i ) {
           current = x[i];
-          if ( current == '(' || current == '[' || current == '{') {
+          if (current == '(' || current == '[' || current == '{') {
                s.push(current);
           }
-          
-      }
-
-
-
-      unsigned i = 0;
-      while (i < x.size() / 2) {
-          switch (x[2 * i]) {
-             case '(':   
-                 if (x[2 * i + 1] != ')') {
-                     return false;
-                 }
-                 else {++i;continue;}
-             case '[':
-                 if (x[2 * i + 1] != ']') {
-                     return false;
-                 }
-                 else {++i;continue;}
-             case '{':         
-                 if (x[2 * i + 1] != '}') {
-                     return false;
-                 }
-                 else {++i;continue;}
-                 
-             default: return false;
+          else {
+               if (current == ')'|| current == ']' || current == '}') {
+                   if (s.empty()) {
+                        return false;
+                   }     
+                   
+                   p = s.pop();
+                   if (p != current + 1) {
+                      return false;
+                   }
+               }
+               else {
+                   return false;
+               }
           }
-     
-         ++i;    
       }
-      
+
+      if (!s.empty()) {
+         return false;
+      }
+
       return true;
-   }
 };
 
 int main() {
@@ -60,7 +52,9 @@ int main() {
     if (y.validParenthese(x)) {
         cout << "correct" << endl;
     }
-    else cout << "wrong" << endl;
-
+    else {
+        cout << "wrong" << endl;
+    }
+}
     return 0;
 }
