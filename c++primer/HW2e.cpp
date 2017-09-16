@@ -1,3 +1,7 @@
+/*
+ * author: Jiabin.Li
+ */
+
 #include<iostream>
 #include<array>
 #include<algorithm>
