@@ -1,5 +1,11 @@
+<<<<<<< HEAD:leetcode/longestContinuousIncreasingSubsequence.cpp
 //https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
  
+=======
+/*
+ * https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
+ */
+>>>>>>> 1d063419efe182f9db6b92455afa163d05649756:leetcode/findLengthOfLCIS.cpp
 
 #include<iostream>
 #include<vector>
