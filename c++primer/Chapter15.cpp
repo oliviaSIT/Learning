@@ -9,6 +9,8 @@ public:
 	Base(int x = 0, int y = 0, int z = 0): 
 		x(x), y(y), z(z) { }
 
+	int getPri() {return z;}
+
 protected:
 	int y;
 
@@ -54,7 +56,7 @@ public:
 
         int getPro() {return y;}
 
-        int getPri() {return z;}
+        int Base::getPri() {return z;}
 
 };
 
@@ -63,7 +65,9 @@ int main() {
 //	PubDerive d(1 ,2, 3);
 //	ProDerive d(1 ,2, 3);
 	PriDerive d(1, 2, 3);
-
+	int ans1 = d.getPub();
+	int ans2 = d.getPro();
+	int ans3 = d.getPri();
 	int a = d.x;
 	int b = d.y;
 	int c = d.z;	
